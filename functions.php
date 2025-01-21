@@ -22,6 +22,14 @@ function coulter_fse_styles() {
 		[],
 		wp_get_theme()->get( 'Version' )
 	);
+
+	// SCSS
+	wp_enqueue_style( 
+		'coulter-fse-scss',
+		get_template_directory_uri() . '/dist/css/style.css', 
+		[], 
+		filemtime( get_template_directory() . '/dist/css/style.css' ) 
+	);
 }
 add_action( 'wp_enqueue_scripts', 'coulter_fse_styles' );
 
