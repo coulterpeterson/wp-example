@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
     "build-css": "sass src/scss/style.scss dist/css/style.css --style=compressed",
     "watch-css": "sass --watch src/scss/style.scss:dist/css/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +14,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@wordpress/scripts": "^30.9.0",
     "sass": "^1.83.4"
   }
 }

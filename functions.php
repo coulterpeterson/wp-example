@@ -37,3 +37,25 @@ function my_translatable_string_shortcode() {
 	return __( 'This is a translatable string.', 'coulter-fse' );
 }
 add_shortcode( 'translatable_string', 'my_translatable_string_shortcode' );
+
+function coulter_theme_register_blocks() {
+	$blocks_dir = get_template_directory() . '/blocks/example-block';
+	$asset_file = include( $blocks_dir . '/index.asset.php' );
+
+	wp_register_script(
+			'example-block-editor',
+			get_template_directory_uri() . '/blocks/example-block/index.js',
+			$asset_file['dependencies'],
+			$asset_file['version']
+	);
+
+	wp_register_style(
+			'example-block-style',
+			get_template_directory_uri() . '/blocks/example-block/style.css',
+			[],
+			filemtime( $blocks_dir . '/style.css' )
+	);
+
+	register_block_type( $blocks_dir . '/block.json' );
+}
+add_action( 'init', 'coulter_theme_register_blocks' );

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "theme/example-block",
+  "title": "Example Block",
+  "category": "text",
+  "icon": "smiley",
+  "description": "A custom block for demonstration.",
+  "keywords": [ "custom", "block", "example" ],
+  "textdomain": "coulter-fse",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./style.css",
+  "style": "file:./style.css"
+}
